@@ -40,66 +40,73 @@
             // labelModelName
             // 
             this.labelModelName.AutoSize = true;
-            this.labelModelName.Location = new System.Drawing.Point(199, 98);
+            this.labelModelName.Location = new System.Drawing.Point(298, 151);
+            this.labelModelName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelModelName.Name = "labelModelName";
-            this.labelModelName.Size = new System.Drawing.Size(67, 13);
+            this.labelModelName.Size = new System.Drawing.Size(98, 20);
             this.labelModelName.TabIndex = 0;
             this.labelModelName.Text = "Model Name";
             // 
             // labelImei
             // 
             this.labelImei.AutoSize = true;
-            this.labelImei.Location = new System.Drawing.Point(199, 158);
+            this.labelImei.Location = new System.Drawing.Point(298, 243);
+            this.labelImei.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelImei.Name = "labelImei";
-            this.labelImei.Size = new System.Drawing.Size(29, 13);
+            this.labelImei.Size = new System.Drawing.Size(43, 20);
             this.labelImei.TabIndex = 0;
             this.labelImei.Text = "IMEI";
             // 
             // labelPrice
             // 
             this.labelPrice.AutoSize = true;
-            this.labelPrice.Location = new System.Drawing.Point(199, 215);
+            this.labelPrice.Location = new System.Drawing.Point(298, 331);
+            this.labelPrice.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelPrice.Name = "labelPrice";
-            this.labelPrice.Size = new System.Drawing.Size(31, 13);
+            this.labelPrice.Size = new System.Drawing.Size(44, 20);
             this.labelPrice.TabIndex = 0;
             this.labelPrice.Text = "Price";
             // 
             // textBoxModelName
             // 
-            this.textBoxModelName.Location = new System.Drawing.Point(302, 95);
+            this.textBoxModelName.Location = new System.Drawing.Point(453, 146);
+            this.textBoxModelName.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.textBoxModelName.Name = "textBoxModelName";
-            this.textBoxModelName.Size = new System.Drawing.Size(223, 20);
+            this.textBoxModelName.Size = new System.Drawing.Size(332, 26);
             this.textBoxModelName.TabIndex = 1;
             // 
             // textBoxImei
             // 
-            this.textBoxImei.Location = new System.Drawing.Point(302, 151);
+            this.textBoxImei.Location = new System.Drawing.Point(453, 232);
+            this.textBoxImei.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.textBoxImei.Name = "textBoxImei";
-            this.textBoxImei.Size = new System.Drawing.Size(223, 20);
-            this.textBoxImei.TabIndex = 1;
+            this.textBoxImei.Size = new System.Drawing.Size(332, 26);
+            this.textBoxImei.TabIndex = 2;
             // 
             // textBoxPrice
             // 
-            this.textBoxPrice.Location = new System.Drawing.Point(302, 208);
+            this.textBoxPrice.Location = new System.Drawing.Point(453, 320);
+            this.textBoxPrice.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.textBoxPrice.Name = "textBoxPrice";
-            this.textBoxPrice.Size = new System.Drawing.Size(223, 20);
-            this.textBoxPrice.TabIndex = 1;
+            this.textBoxPrice.Size = new System.Drawing.Size(332, 26);
+            this.textBoxPrice.TabIndex = 3;
             // 
             // SaveButton
             // 
-            this.SaveButton.Location = new System.Drawing.Point(450, 262);
+            this.SaveButton.Location = new System.Drawing.Point(675, 403);
+            this.SaveButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.SaveButton.Name = "SaveButton";
-            this.SaveButton.Size = new System.Drawing.Size(75, 29);
-            this.SaveButton.TabIndex = 2;
+            this.SaveButton.Size = new System.Drawing.Size(112, 45);
+            this.SaveButton.TabIndex = 4;
             this.SaveButton.Text = "Save";
             this.SaveButton.UseVisualStyleBackColor = true;
             this.SaveButton.Click += new System.EventHandler(this.SaveButton_Click);
             // 
             // Save
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1200, 692);
             this.Controls.Add(this.SaveButton);
             this.Controls.Add(this.textBoxPrice);
             this.Controls.Add(this.textBoxImei);
@@ -107,6 +114,7 @@
             this.Controls.Add(this.labelPrice);
             this.Controls.Add(this.labelImei);
             this.Controls.Add(this.labelModelName);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Save";
             this.Text = "SaveInfo";
             this.ResumeLayout(false);

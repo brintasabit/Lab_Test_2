@@ -35,42 +35,46 @@
             // 
             // SaveMobileButton
             // 
-            this.SaveMobileButton.Location = new System.Drawing.Point(242, 131);
+            this.SaveMobileButton.Location = new System.Drawing.Point(363, 202);
+            this.SaveMobileButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.SaveMobileButton.Name = "SaveMobileButton";
-            this.SaveMobileButton.Size = new System.Drawing.Size(263, 30);
-            this.SaveMobileButton.TabIndex = 0;
+            this.SaveMobileButton.Size = new System.Drawing.Size(394, 46);
+            this.SaveMobileButton.TabIndex = 1;
             this.SaveMobileButton.Text = "Save Mobile Handset Information";
             this.SaveMobileButton.UseVisualStyleBackColor = true;
             this.SaveMobileButton.Click += new System.EventHandler(this.SaveMobileButton_Click);
             // 
             // SearchPriceButton
             // 
-            this.SearchPriceButton.Location = new System.Drawing.Point(242, 184);
+            this.SearchPriceButton.Location = new System.Drawing.Point(363, 283);
+            this.SearchPriceButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.SearchPriceButton.Name = "SearchPriceButton";
-            this.SearchPriceButton.Size = new System.Drawing.Size(263, 34);
-            this.SearchPriceButton.TabIndex = 0;
+            this.SearchPriceButton.Size = new System.Drawing.Size(394, 52);
+            this.SearchPriceButton.TabIndex = 2;
             this.SearchPriceButton.Text = "Search Mobile Handset By Price Range";
             this.SearchPriceButton.UseVisualStyleBackColor = true;
             this.SearchPriceButton.Click += new System.EventHandler(this.SearchPriceButton_Click);
             // 
             // SearchImeiButton
             // 
-            this.SearchImeiButton.Location = new System.Drawing.Point(242, 238);
+            this.SearchImeiButton.Location = new System.Drawing.Point(363, 366);
+            this.SearchImeiButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.SearchImeiButton.Name = "SearchImeiButton";
-            this.SearchImeiButton.Size = new System.Drawing.Size(263, 35);
-            this.SearchImeiButton.TabIndex = 0;
+            this.SearchImeiButton.Size = new System.Drawing.Size(394, 54);
+            this.SearchImeiButton.TabIndex = 3;
             this.SearchImeiButton.Text = "Search Mobile Handset By IMEI";
             this.SearchImeiButton.UseVisualStyleBackColor = true;
             this.SearchImeiButton.Click += new System.EventHandler(this.SearchImeiButton_Click);
             // 
             // Index
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1200, 692);
             this.Controls.Add(this.SearchImeiButton);
             this.Controls.Add(this.SearchPriceButton);
             this.Controls.Add(this.SaveMobileButton);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Index";
             this.Text = "Index";
             this.ResumeLayout(false);

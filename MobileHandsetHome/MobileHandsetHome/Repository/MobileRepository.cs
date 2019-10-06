@@ -14,7 +14,7 @@ namespace MobileHandsetHome.Repository
         public bool SaveMobiles(Mobile _mobile)
         {
            // List<Mobile> mobiles=new List<Mobile>();
-            string connectionString = @"Server=PC-301-29\SQLEXPRESS; Database=MobileHandsetsInformation; Integrated Security=True";
+            string connectionString = @"Server=BRINTA-PC; Database=MobileHandsetsInformation; Integrated Security=True";
             SqlConnection sqlConnection = new SqlConnection(connectionString);
             string commandString = @"insert into MobileHandset values('"+_mobile.ModelName+"','"+_mobile.Imei+"',"+_mobile.Price+")";
             SqlCommand sqlCommand = new SqlCommand(commandString, sqlConnection);
@@ -31,7 +31,7 @@ namespace MobileHandsetHome.Repository
         public List<Mobile> SearchByPriceRange(Mobile _mobile)
         {
             List<Mobile>mobiles=new List<Mobile>();
-            string connectionString = @"Server=PC-301-29\SQLEXPRESS; Database=MobileHandsetsInformation; Integrated Security=True";
+            string connectionString = @"Server=BRINTA-PC; Database=MobileHandsetsInformation; Integrated Security=True";
             SqlConnection sqlConnection = new SqlConnection(connectionString);
             string commandString = @"SELECT Model_Name,IMEI,Price FROM MobileHandset
                                      WHERE Price BETWEEN "+_mobile.MinPrice+" AND "+_mobile.MaxPrice+"";
@@ -41,6 +41,8 @@ namespace MobileHandsetHome.Repository
             while (sqlDataReader.Read())
             {
                 Mobile mobile=new Mobile();
+                mobile.ModelName = sqlDataReader["Model_Name"].ToString();
+                mobile.Imei = sqlDataReader["IMEI"].ToString();
                 mobile.Price =Convert.ToInt32(sqlDataReader["Price"].ToString()) ;
                 mobiles.Add(mobile);
             }
@@ -51,9 +53,9 @@ namespace MobileHandsetHome.Repository
         public List<Mobile> SearchByImei(Mobile _mobile)
         {
             List<Mobile> mobiles = new List<Mobile>();
-            string connectionString = @"Server=PC-301-29\SQLEXPRESS; Database=MobileHandsetsInformation; Integrated Security=True";
+            string connectionString = @"Server=BRINTA-PC; Database=MobileHandsetsInformation; Integrated Security=True";
             SqlConnection sqlConnection = new SqlConnection(connectionString);
-            string commandString = @"SELECT * FROM MobileHandset where IMEI='"+_mobile.Imei+"'";
+            string commandString = @"select * from MobileHandset where IMEI='"+_mobile.Imei+"'";
             SqlCommand sqlCommand = new SqlCommand(commandString, sqlConnection);
             sqlConnection.Open();
             SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
@@ -61,9 +63,10 @@ namespace MobileHandsetHome.Repository
             {
                Mobile mobile = new Mobile();
                // mobile.Price = Convert.ToInt32(sqlDataReader["Price"].ToString());
-               mobile.ModelName = sqlDataReader["Model_Name"].ToString();
+              // mobile.Id = Convert.ToInt32(sqlDataReader["ID"].ToString());
+             //  mobile.ModelName = sqlDataReader["Model_Name"].ToString();
                mobile.Imei = sqlDataReader["IMEI"].ToString();
-               mobile.Price = Convert.ToInt32(sqlDataReader["Price"].ToString());
+              // mobile.Price = Convert.ToInt32(sqlDataReader["Price"].ToString());
                mobiles.Add(mobile);
             }
             sqlConnection.Close();

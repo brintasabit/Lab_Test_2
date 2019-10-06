@@ -28,23 +28,31 @@ namespace MobileHandsetHome
 
         private void SearchButton_Click(object sender, EventArgs e)
         {
-            
-            _mobile.MinPrice = Convert.ToInt32(textBoxMinPrice.Text);
-            _mobile.MaxPrice = Convert.ToInt32(textBoxMaximunPrice.Text);
+            try
+            {
+                _mobile.MinPrice = Convert.ToInt32(textBoxMinPrice.Text);
+                _mobile.MaxPrice = Convert.ToInt32(textBoxMaximunPrice.Text);
 
-            List<Mobile>mobiles=new List<Mobile>();
-           // int isSearch = _mobileManager.SearchByPriceRange(_mobile);
-            if (mobiles.Count>0)
-            {
-                // dataGridViewMobiles.DataSource = Convert.ToBoolean(_mobileManager.SearchByPriceRange(_mobile));
-                MessageBox.Show("Data Found!");
-                dataGridViewMobiles.DataSource = _mobileManager.SearchByPriceRange(_mobile);
-               
+                List<Mobile> mobiles = _mobileManager.SearchByPriceRange(_mobile);
+                // int isSearch = _mobileManager.SearchByPriceRange(_mobile);
+                if (mobiles.Count > 0)
+                {
+                    // dataGridViewMobiles.DataSource = Convert.ToBoolean(_mobileManager.SearchByPriceRange(_mobile));
+                    //MessageBox.Show("Data Found!");
+                    dataGridViewMobiles.DataSource = _mobileManager.SearchByPriceRange(_mobile);
+
+                }
+                else
+                {
+                    MessageBox.Show("Not Exist");
+                }
             }
-            else
+            catch (Exception exception)
             {
-                MessageBox.Show("Not Exist");
+                Console.WriteLine(exception);
+                //throw;
             }
+            
         }
     }
 }

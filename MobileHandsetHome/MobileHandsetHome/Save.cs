@@ -33,17 +33,33 @@ namespace MobileHandsetHome
                     _mobile.Imei = textBoxImei.Text;
                     _mobile.Price = Convert.ToInt32(textBoxPrice.Text);
                    
-                    
-                    bool isSaved = _mobileManager.SaveMobiles(_mobile);
-                    if (isSaved)
+                    List<Mobile>mobiles=_mobileManager.SearchByImei(_mobile);
+                    if (mobiles.Count>0)
                     {
-                        MessageBox.Show("Saved");
+                        MessageBox.Show("Data Exists!");
+                    }
+                    else if (_mobile.Imei.Length>11)
+                    {
+                        MessageBox.Show("IMEI Is Not More Than 11 Character!");
+                    }
+                    else if (_mobile.Imei.Length < 11)
+                    {
+                        MessageBox.Show("IMEI Is 11 Character!");
                     }
                     else
                     {
-                        MessageBox.Show("Not Saved");
+                        bool isSaved = _mobileManager.SaveMobiles(_mobile);
+                        if (isSaved)
+                        {
+                            MessageBox.Show("Saved");
+                        }
+                        else
+                        {
+                            MessageBox.Show("Not Saved");
+                        }
+                        
                     }
-            }
+                }
                 catch (Exception exception)
                 {
                     MessageBox.Show(exception.Message);

@@ -11,8 +11,8 @@ namespace MobileHandsetHome.Model
         public string ModelName { set; get; }
         public string Imei { set; get; }
         public int Price { set; get; }
-       // public int Id { set; get; }
-       public int MinPrice { set; get; }
-       public int MaxPrice { set; get; }
+        public int Id { set; get; }
+        public int MinPrice { set; get; }
+        public int MaxPrice { set; get; }
     }
 }
